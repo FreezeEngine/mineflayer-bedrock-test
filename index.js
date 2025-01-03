@@ -26,7 +26,7 @@ options = {
     skipPing: true,
     viewDistance: 5,
     autoInitPlayer: true,
-    port: 61696,
+    port: 19132,
     offline: true,
     username: username,
     batchingInterval: batchingInterval,
