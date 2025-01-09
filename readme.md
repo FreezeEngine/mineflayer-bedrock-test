@@ -8,9 +8,16 @@ It was made 7 month ago and tested on 1.18-1.19.1 protocols regarding entities (
 3. Start index.js
 
 it will also require more setup: it won't work out of the box because minecraft-data for bedrock does not have some info physics relies on, BUT you can "patch" it:
-1. Locate bedrock-physics folder in node modules
+1. Locate prismarine-physics folder in mineflayer-bedrock-public node_modules
 2. Open index.js
-3. Change line 83 to: "movementSpeedAttribute: mcData.attributesByName ? mcData.attributesByName.movementSpeed.resource : 'minecraft:movement_speed'," (without "")
+3. Change line 83 from
+```js
+movementSpeedAttribute: mcData.attributesByName.movementSpeed.resource,
+````
+to
+```js
+movementSpeedAttribute: mcData.attributesByName ? mcData.attributesByName.movementSpeed.resource : 'minecraft:movement_speed',
+```
 
 Known issues:
 A lot of things wasn't tested on 1.20 AND minecraft-data doesn't have blockstates for 1.19.1+ SO physics WON'T work properly (bot will fall thruough the world). BUT you can check how it works on 1.18 or 1.19.1
